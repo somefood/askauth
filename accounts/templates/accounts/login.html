@@ -1,0 +1,11 @@
+<form action="" method="post">
+    {% csrf_token %}
+    <table>
+        {{form.as_table}}  
+        {%comment %}
+        login뷰로 만들면 form 인자가 들어가는 듯?
+        login과 profile은 장고에서 정해준 이름임
+        {% endcomment %}
+    </table>
+    <input type="submit">
+</form>

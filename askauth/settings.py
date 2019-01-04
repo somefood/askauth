@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog',
+    'accounts',
 ]
 
 MIDDLEWARE = [
@@ -121,3 +122,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+from django.urls import reverse_lazy # reverse를 쓰면 초기화 되는 과정에 실행돼서 실패함. reverse_lazy를 저 값을 참고할 때 동작하게 됨.
+# LOGIN_URL = '/accounts/login/'
+LOGIN_URL = reverse_lazy('login')
+
+# LOGIN_REDIRECT_URL = '/accounts/profile/'
+# LOGIN_REDIRECT_URL = reverse_lazy('profile')
