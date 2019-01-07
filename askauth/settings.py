@@ -125,7 +125,9 @@ STATIC_URL = '/static/'
 
 from django.urls import reverse_lazy # reverse를 쓰면 초기화 되는 과정에 실행돼서 실패함. reverse_lazy를 저 값을 참고할 때 동작하게 됨.
 # LOGIN_URL = '/accounts/login/'
-LOGIN_URL = reverse_lazy('login')
+LOGIN_URL = reverse_lazy('login') # askauth urls name=login인걸로 이동
 
 # LOGIN_REDIRECT_URL = '/accounts/profile/'
 # LOGIN_REDIRECT_URL = reverse_lazy('profile')
+
+LOGOUT_REDIRECT_URL = reverse_lazy('login')
